@@ -67,6 +67,7 @@ module.exports = class CommandInstance {
     normalizePath(path) {
         return path
             .replace(/\\/g, '/') // Convert backslashes from windows paths to forward slashes, otherwise the shell will ignore them.
-            .replace(/ /g, '\\ '); // Escape spaces.
+            .replace(/ /g, '\\ ') // Escape spaces.
+            .replace('c:','/mnt/c');
     }
 }
